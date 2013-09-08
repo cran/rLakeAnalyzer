@@ -1,0 +1,52 @@
+\name{load.ts}
+\alias{load.ts}
+
+\title{
+	Load timeseries from properly formatted text file.
+}
+\description{
+	A convenience function to load timeseries data into R based on the standardized format used by Lake Analyzer.
+}
+\usage{
+load.ts(fPath)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{fPath}{
+	The file path as a string.
+}
+}
+\details{
+	Timeseries files must follow a common format. The first column must have the label 'datetime' and 
+	be of the format \emph{yyyy-mm-dd HH:MM:SS} (ISO 8601 without the "T" delimiter). The second can be skipped 
+	if not using sub-minute data.
+}
+\value{
+	A data frame in the required format for use with other rLakeAnalyzer timeseries functions.
+}
+
+\author{
+ Luke Winslow
+}
+
+\seealso{
+For dataloading \code{\link{ts.meta.depths}}, \cr
+For analyzing timeseries data, see \code{\link{ts.meta.depths}}, \code{\link{ts.thermo.depth}}, \code{\link{ts.schmidt.stability}},
+\code{\link{ts.lake.number}}.
+}
+\examples{
+	#Get the path for the package example file included
+	exampleFilePath <- system.file('extdata', 'Sparkling.wtr', package="rLakeAnalyzer")
+	
+	#Load
+	sparkling.temp = load.ts(exampleFilePath)
+	
+	#calculate and plot the thermocline depth
+	t.d = ts.thermo.depth(sparkling.temp)
+	
+	plot(t.d$datetime, t.d$thermo.depth, type='l', ylab='Thermocline Depth (m)', xlab='Date')
+}
+
+
+\keyword{file}
+
