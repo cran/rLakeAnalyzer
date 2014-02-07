@@ -10,7 +10,7 @@ It uses a special technique to estimate where the thermocline lies even between 
 giving a potentially finer-scale estimate than usual techniques.
 }
 \usage{
-thermo.depth(wtr, depths, Smin = 0.1, seasonal=TRUE)
+thermo.depth(wtr, depths, Smin = 0.1, seasonal=TRUE, index=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +26,9 @@ thermo.depth(wtr, depths, Smin = 0.1, seasonal=TRUE)
   \item{seasonal}{
 		a logical value indicating whether the seasonal thermocline should be returned. The seasonal thermocline 
 		is defined as the deepest density gradient found in the profile. If FALSE, the depth of the maximum density gradient is returned.
+	}
+	\item{index}{
+		Boolean value indicated if index of the thermocline depth, instead of the depth value, should be returned.
 	}
 }
 

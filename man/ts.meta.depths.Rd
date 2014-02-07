@@ -3,6 +3,8 @@
 \alias{ts.thermo.depth}
 \alias{ts.schmidt.stability}
 \alias{ts.lake.number}
+\alias{ts.uStar}
+
 
 \title{
   Calculate physical indices for a timeseries.
@@ -13,13 +15,15 @@
   \code{\link{load.bathy}}.
 }
 \usage{
-  ts.meta.depths(wtr, slope = 0.1)
+  ts.meta.depths(wtr, slope = 0.1, seasonal=TRUE)
 
   ts.thermo.depth(wtr, Smin = 0.1, seasonal=TRUE)
 
   ts.schmidt.stability(wtr, bathy)
 
-  ts.lake.number(wtr, wnd, wnd.height, bathy)
+  ts.lake.number(wtr, wnd, wnd.height, bathy, seasonal=TRUE)
+  
+  ts.uStar(wtr, wnd, wnd.height, bathy, seasonal=TRUE)
 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -69,7 +73,7 @@
 
 \examples{
 	#Get the path for the package example file included
-	exampleFilePath <- system.file('extdata', 'Sparkling.wtr', package="rLakeAnalyzer")
+	exampleFilePath <- system.file('extdata', 'Sparkling.daily.wtr', package="rLakeAnalyzer")
 	
 	#Load
 	sparkling.temp = load.ts(exampleFilePath)

@@ -5,9 +5,7 @@
 # Author: Luke Winslow <lawinslow@gmail.com>
 # Adapted from FindThermoDepth.m in https://github.com/jread-usgs/Lake-Analyzer/
 #
-thermo.depth <- function(wtr, depths, Smin = 0.1, seasonal=TRUE){
-  #argh, data structures in R!
-  #lets just do this the hard way to start.
+thermo.depth <- function(wtr, depths, Smin = 0.1, seasonal=TRUE, index=FALSE){
   
   if(any(is.na(wtr))){
     return(NaN)
@@ -27,7 +25,7 @@ thermo.depth <- function(wtr, depths, Smin = 0.1, seasonal=TRUE){
   drho_dz = rep(NaN, numDepths-1);
   
   #Calculate the first derivative of density
-  for(i in 1:numDepths-1){
+  for(i in 1:(numDepths-1)){
 	  drho_dz[i] = ( rhoVar[i+1]-rhoVar[i] )/( depths[i+1] - depths[i] );
   }
   
@@ -91,10 +89,20 @@ thermo.depth <- function(wtr, depths, Smin = 0.1, seasonal=TRUE){
 	  SthermoInd = thermoInd
   }
   
-  if(seasonal){
-    return(SthermoD)
+  #Ok, which output was requested. Index or value
+  # seasonal or non-seasonal
+  if(index){
+    if(seasonal){
+      return(SthermoInd)
+    }else{
+      return(thermoInd)
+    }
   }else{
-  	return(thermoD)
+    if(seasonal){
+      return(SthermoD)
+    }else{
+    	return(thermoD)
+    }
   }
   
   #list( thermoD, thermoInd, drho_dz, SthermoD, SthermoInd )
