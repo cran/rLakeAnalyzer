@@ -15,18 +15,18 @@
   \code{\link{load.bathy}}.
 }
 \usage{
-  ts.meta.depths(wtr, slope = 0.1, seasonal=TRUE)
+  ts.meta.depths(wtr, slope = 0.1, seasonal=TRUE, na.rm=FALSE)
 
-  ts.thermo.depth(wtr, Smin = 0.1, seasonal=TRUE)
+  ts.thermo.depth(wtr, Smin = 0.1, seasonal=TRUE, na.rm=FALSE)
 
-  ts.schmidt.stability(wtr, bathy)
+  ts.schmidt.stability(wtr, bathy, na.rm=FALSE)
 
   ts.lake.number(wtr, wnd, wnd.height, bathy, seasonal=TRUE)
   
   ts.uStar(wtr, wnd, wnd.height, bathy, seasonal=TRUE)
 
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{wtr}{
     A data frame of water temperatures (in Celsius). Loaded using \code{\link{load.ts}}
@@ -48,6 +48,10 @@
   }
   \item{seasonal}{
     Boolean indicating if seasonal thermocline should be used in calculation.
+  }
+  \item{na.rm}{
+	Boolean indicated if step-by-step removal of NA's should be tried. If false, a timestep with any NA values 
+	will return an NA value. If true, best effort will be made to calculate indices despite NA values.
   }
 }
 \details{

@@ -28,9 +28,9 @@ load.bathy <- function(fPath){
   return(d)
 }
 
-load.ts <- function(fPath){
+load.ts <- function(fPath, tz='GMT'){
   #Load data
-  d = read.table(fPath, sep='\t', header=TRUE)
+  d = read.table(fPath, sep='\t', header=TRUE, as.is=TRUE)
   
   #Just standardize all headers as lowercase
   names(d) = tolower(names(d))
@@ -38,8 +38,15 @@ load.ts <- function(fPath){
   if( !any('datetime' %in% names(d)) ){
     stop('Timeseries file must be tab delimited and contain a column labeled \'datetime\'');
   }
+  
+  #n.unique.datetime = length(unique(d$datetime))
+  
   #convert column to a real date/time format
-  d$datetime = as.POSIXct(d$datetime)
+  d$datetime = as.POSIXct(d$datetime, tz)
+  
+  #if(n.unique.datetime != unique(d$datetime)){
+  #	stop('Error parsing datetimes. Check your format. No duplicate datetime values allowed.')
+  #}
   
   return(d)
 }
