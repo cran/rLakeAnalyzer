@@ -4,7 +4,7 @@
 \alias{ts.schmidt.stability}
 \alias{ts.lake.number}
 \alias{ts.uStar}
-
+\alias{ts.internal.energy}
 
 \title{
   Calculate physical indices for a timeseries.
@@ -15,9 +15,9 @@
   \code{\link{load.bathy}}.
 }
 \usage{
-  ts.meta.depths(wtr, slope = 0.1, seasonal=TRUE, na.rm=FALSE)
+  ts.meta.depths(wtr, slope = 0.1, na.rm=FALSE, ...)
 
-  ts.thermo.depth(wtr, Smin = 0.1, seasonal=TRUE, na.rm=FALSE)
+  ts.thermo.depth(wtr, Smin = 0.1, na.rm=FALSE, ...)
 
   ts.schmidt.stability(wtr, bathy, na.rm=FALSE)
 
@@ -25,11 +25,12 @@
   
   ts.uStar(wtr, wnd, wnd.height, bathy, seasonal=TRUE)
 
+	ts.internal.energy(wtr, bathy, na.rm=FALSE)
 }
 
 \arguments{
   \item{wtr}{
-    A data frame of water temperatures (in Celsius). Loaded using \code{\link{load.ts}}
+    A data frame of water temperatures (in Celsius). Loaded using \code{\link{load.ts}}. Must have columns \code{datetime}, \code{wtr_##.#} where ##.# is depth in meters.
   }
   \item{slope}{
     The minimum density gradient (kg/m^3/m) that can be called the thermocline
@@ -53,6 +54,9 @@
 	Boolean indicated if step-by-step removal of NA's should be tried. If false, a timestep with any NA values 
 	will return an NA value. If true, best effort will be made to calculate indices despite NA values.
   }
+  \item{...}{
+	Additional parameters passed to underlying base function (e.g., index=TRUE for thermo.depth)
+  }
 }
 \details{
   These are wrapper functions that accept a timeseries of data and call the core
@@ -72,7 +76,7 @@
   For loading input data \code{\link{load.ts}}, \code{\link{load.bathy}}.
   
   For the underlying functions operating at each timestep \code{\link{meta.depths}}, 
-  \code{\link{thermo.depth}}, \code{\link{schmidt.stability}}, \code{\link{lake.number}}.
+  \code{\link{thermo.depth}}, \code{\link{schmidt.stability}}, \code{\link{lake.number}}, \code{\link{internal.energy}}.
 }
 
 \examples{

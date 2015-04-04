@@ -48,7 +48,7 @@ if(min(bthD) < 0){
 numD = length(wtr)
 if(max(bthD) > depths[numD]){
 	wtr[numD+1] = wtr[numD]
-	sal[numD+1] = sal[numD+1]
+	sal[numD+1] = sal[numD]
 	depths[numD+1] = max(bthD)
 }else if(max(bthD) < depths[numD]) {
 	bthD = c(bthD, depths[numD])
@@ -77,17 +77,8 @@ layerD = seq(min(depths), max(depths), by=dz)
 layerP = approx(depths, rhoL, layerD)$y
 layerA = approx(bthD, bthA, layerD)$y
 
-Zv = layerD * layerA * dz
-Zcv = sum(Zv)/sum(layerA)/dz
-
-numInt = length(layerA)
-st = layerA * NaN
-for (i in 1:numInt){
-	z = layerD[i]
-	A = layerA[i]
-	st[i] = -(Zcv-z)*layerP[i]*A*dz
-}
-St = g/Ao*sum(st)
+Zcv <- layerD %*% layerA / sum(layerA)
+St <- layerP %*% ((layerD - Zcv) * layerA) * dz * g / Ao
 
 return(St)
 

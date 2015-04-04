@@ -12,7 +12,7 @@ buoyancy.freq <- function(wtr, depths){
   
   #Calculate the first derivative of density
   for(i in 1:(numDepths-1)){
-    n2[i] = 9.84/rhoVar[i]*( rhoVar[i+1]-rhoVar[i] )/( depths[i+1] - depths[i] )
+    n2[i] = 9.81/rhoVar[i]*( rhoVar[i+1]-rhoVar[i] )/( depths[i+1] - depths[i] )
     n2depths[i] = (depths[i+1] + depths[i])/2
   }
   
@@ -28,7 +28,8 @@ ts.buoyancy.freq <- function(wtr, at.thermo=TRUE, ...){
   
   n = nrow(wtr)
   
-  wtr.mat = as.matrix(wtr[,-1])
+  #drop the datetime column
+  wtr.mat = as.matrix(drop.datetime(wtr))
   
   #If just N2 at the thermocline is requested, pull out just those values
   if(at.thermo){
@@ -43,7 +44,7 @@ ts.buoyancy.freq <- function(wtr, at.thermo=TRUE, ...){
         n2[i] = tmp.n2[thermo.indx]
       }
     }
-    n2 = data.frame(wtr[,'datetime', drop=F], n2)
+    n2 = data.frame(datetime=get.datetime(wtr), n2=n2)
     
   }else{ #If N2 is requested for the entire water column, output full data.frame
     
@@ -57,7 +58,7 @@ ts.buoyancy.freq <- function(wtr, at.thermo=TRUE, ...){
     attr(n2, 'depths') = attr(tmp, 'depths')
     n2 = as.data.frame(n2)
     names(n2) = paste('N2_', as.character(attr(tmp,'depth')), sep='')
-    n2 = cbind(wtr[,'datetime', drop=F], n2)
+    n2 = rbind(data.frame(datetime=get.datetime(wtr)), n2)
   }
   
   return(n2)
