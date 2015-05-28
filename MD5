@@ -1,4 +1,4 @@
-e594d9cd4d7a7116e48939992244d89f *DESCRIPTION
+3fecde0b39fe4296b3a732312649454b *DESCRIPTION
 c4118d184ed5e2c907d102ae5f7fa418 *NAMESPACE
 7a00a4e9d3cfc7de9af3ef798d770ee6 *R/buoyancy.freq.R
 ffebddc1d0fd6fb0f50af7b17a5809b7 *R/center.buoyancy.R
@@ -9,7 +9,7 @@ b47f86ddb1cbecd8c03a1e37dae8a53e *R/lake.number.plot.R
 0a83c7e69aaf69ba9d0564933611f7d9 *R/layer.density.R
 0c78e3c3f51766d06114ca9b02890aa2 *R/layer.temperature.R
 c2399020fcd921c277493fc90e0c4a0a *R/load.data.R
-177de6d896262cca4ba961780378cf52 *R/meta.depths.R
+2d8e520f14546f657aeb6fc85c5f315d *R/meta.depths.R
 17dffa6f9ea718fc434b9a842fdd56cd *R/schmidt.plot.R
 2dab10d8598e30dbf5feca37c69aef46 *R/schmidt.stability.R
 ca3fd01da2e7370d5257c0b6628552bf *R/thermo.depth.R
@@ -21,8 +21,8 @@ f3431cb47d8cb638b397868a08f47867 *R/wtr.heatmap.layers.R
 4df6939a83123f710b0928f9f1d54eea *R/wtr.lineseries.R
 4c2d63dc74657eb6d694191b56afe578 *R/wtr.plot.temp.R
 1bfe68dd8e82e4429ed4e55656a43a8a *R/wtr.plotting.R
-730bb7f542f69f5c31c0e2f96ad919c4 *README.md
-cfd364ce6de14fabba06f12064f3a0ea *build/vignette.rds
+1289080e3a8fbd758fe35348a43dd3b5 *README.md
+7a6b98a6a9a4d05e5d3c14b9711ffb86 *build/vignette.rds
 262c0f3ede06da9a5132c96b7066d95e *inst/doc/data.handling.R
 e057d732df597c2aab8de15771bc2133 *inst/doc/data.handling.Rnw
 7ce752a7e723f4f3a6e214ade95b54d8 *inst/doc/data.handling.pdf
@@ -34,17 +34,17 @@ ce33c5bdef1a1b96f2494f04d00868bb *inst/extdata/Sparkling.daily.wtr
 5b9821960bf1692aaf28cf7dc58f5e2e *man/buoyancy.freq.Rd
 6be40c902facffe80515efc281f71d7f *man/center.buoyancy.Rd
 a95ac842ec438826103a15b89726ab58 *man/get.offsets.Rd
-6c096882702121ba3323e557996c5854 *man/internal.energy.Rd
+43ec1b644f1fd9a8d18f13b6869fb145 *man/internal.energy.Rd
 f00c545398c02b82c25adbd304dc09ee *man/lake.number.Rd
 d234ef74b6520f627cf55ffaea94e518 *man/lake.number.plot.Rd
 ed0d2eadfb5d5b4e4f44e3accbc1119a *man/layer.density.Rd
 8a256ccf4990c0ef98a53e0d9b601b39 *man/layer.temperature.Rd
 02af5b3b896ef0df339efcb5a8993cc3 *man/load.bathy.Rd
 fb1ae54b439706c104744c81d1ef6afd *man/load.ts.Rd
-52973d4299c17b13f7ab826d201f14ce *man/meta.depths.Rd
+c16dc0f329a45c9e9e116f8bccd06744 *man/meta.depths.Rd
 4cc2268abf82a95b80b5da5ff9cd6329 *man/schmidt.plot.Rd
 51e3b7a5b5a157d41bf666319c18a9a3 *man/schmidt.stability.Rd
-fff51eb9fa70944823734ca63ccb9bb1 *man/thermo.depth.Rd
+b52e7726707721be905236dfbec15caa *man/thermo.depth.Rd
 b23bcc86bb3252613094edad1a75c533 *man/ts.buoyancy.freq.Rd
 53dd1ffde6f44495c6e1d6af9055d3a3 *man/ts.center.buoyancy.Rd
 3395204f9ec8d52281603e3a27015401 *man/ts.layer.temperature.Rd
@@ -56,5 +56,5 @@ a5436e6676964a3bf6ef260078bd0d8b *man/ts.meta.depths.Rd
 9d5b67a5cd852b52116826ecd8de0d55 *man/wtr.heat.map.Rd
 fe810a0d26bf4fff6644d4850d6b2599 *man/wtr.heatmap.layers.Rd
 4d2d7623b2d1b5b5ecba609224917215 *man/wtr.lineseries.Rd
-2e408d261941befdc1d0b8da1e589bc1 *man/wtr.plot.temp.Rd
+0334a2281efb93bb413f45fdf3563b58 *man/wtr.plot.temp.Rd
 e057d732df597c2aab8de15771bc2133 *vignettes/data.handling.Rnw
