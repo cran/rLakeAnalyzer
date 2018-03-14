@@ -84,7 +84,7 @@ wtr.heatmap.layers <- function(wtr, ...){
   
   #n = nrow(wtr.all)
   
-  wtr.dates = wtr.all$datetime
+  wtr.dates = get.datetime(wtr.all, error=TRUE)
   datestoshow = pretty(wtr.dates)
   wtr.mat = as.matrix(wtr.all[,2:nn]) ##Makes matrix of only temp data even though
   ##meta depths and thermo depths in dataframe too
@@ -107,7 +107,8 @@ wtr.heatmap.layers <- function(wtr, ...){
                                graphics::lines(x=wtr.dates,y=wtr.all$top, col="gray50", lwd = 2)
                                graphics::lines(x=wtr.dates,y=wtr.all$bottom,col="gray80", lwd = 2)
                                graphics::axis(side = 2)
-                               graphics::axis(side = 3, labels=format(datestoshow, ttformat), at = datestoshow, pos = c(min(depths)), tck = -0.03)})
+                               #axis.Date(side=1, x=wtr.dates, at=datestoshow, format=ttformat)
+                               graphics::axis(side = 1, labels=format(datestoshow, ttformat), at = datestoshow, pos = c(max(depths)), tck = -0.03)})
   
   
   
