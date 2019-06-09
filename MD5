@@ -1,4 +1,4 @@
-44f15cb8176916f8f50f2c24bb2df56e *DESCRIPTION
+c167337da765ac91c9534eba26b34998 *DESCRIPTION
 0408d3e26853862306544a27650ea6dd *NAMESPACE
 93e994a084e930c0204dda4d8490a339 *NEWS.md
 e652054b3987fe151a80cd1202ead328 *R/approx.bathy.R
@@ -31,14 +31,14 @@ f46ec637dc7322951476b0ae035173e6 *R/wedderburn.number.R
 ebf1586d0323a3c60b916388a0b76e17 *R/wtr.lineseries.R
 0cec4abd8ec940bc7c77450c98ca75e1 *R/wtr.plot.temp.R
 d9ab6c98b237741d4fce20b8662ac2aa *R/wtr.plotting.R
-6726423a4e1ff6ea84cb8751303b3a6d *build/vignette.rds
-c607d9b18a7fa2ffe756ac5e52bd9171 *data/latesummer.rda
-0aa62ed8c58fb8ffdb71b78ff42d1e54 *inst/doc/data.handling.R
+f24296b14653a5f900202686bf109aea *build/vignette.rds
+6b3878278a57910aa497d446a4931170 *data/latesummer.rda
+05426dc16b910f150e305f5f58b99e6d *inst/doc/data.handling.R
 404d6ab7bab2a31ebde71dd4f10b06cf *inst/doc/data.handling.Rmd
-c1f457833fc574cb9a6677ce1e76b5cc *inst/doc/data.handling.html
-d2734302dce0f67bbe581e33ca44e5b7 *inst/doc/sm_algorithm.R
+c375a67f9b43c9284cd30a1088dee66e *inst/doc/data.handling.html
+051cf2f58d67f8f675c7d280aaf03b18 *inst/doc/sm_algorithm.R
 25bdc324ead8a07656a1f4dd8c1e05f6 *inst/doc/sm_algorithm.Rmd
-bae6d7cde742e00f3e05b0eded164e4b *inst/doc/sm_algorithm.html
+88f8f85985bbd733b12a85f638a0217c *inst/doc/sm_algorithm.html
 9053c69c4ca7620b263c13f64899118f *inst/extdata/Sparkling.bth
 5f20f24fa4171c7240049514bc977ac1 *inst/extdata/Sparkling.daily.wnd
 ce33c5bdef1a1b96f2494f04d00868bb *inst/extdata/Sparkling.daily.wtr

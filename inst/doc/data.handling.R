@@ -17,7 +17,7 @@ kable(df1)
 df <- data.frame(Abbreviation = c("doobs","wtr","wnd","airT","rh"),
                  Variable = c("Dissolved Oxygen Concentration","Water Temperature","Wind Speed",
                               "Air Temperature","Relative Humidity"),
-                 `Assumed Units` = c("mg/L ","°C","m/s","°C","%"))
+                 `Assumed Units` = c("mg/L ","Â°C","m/s","Â°C","%"))
 kable(df)
 
 ## ---- eval = FALSE-------------------------------------------------------
